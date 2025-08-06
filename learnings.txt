@@ -1,0 +1,83 @@
+for .mb files inside vscode
+    ctrl + shift + v
+
+Django - MVT Pattern - 'Good practice of coding'
+    - Model: Define DATA
+    - View: Contains logic for data flow
+    - Template: HTML Interface
+
+Activate Virtual Environment
+py -m venv venv
+venv/scripts/activate
+
+On venv instance
+
+@venv
+django-admin
+django-admin startproject backend
+
+
+Access backend and run the django server
+@venv
+cd backend
+py managed.py server runserver
+
+Open localhost:8000
+
+py manage.py startapp BASE
+
+
+Add the BASE to Apps
+
+
+
+***
+Install the djangoforestframework
+
+pip install djangorestframework
+
+
+Install djangorestframework into settings
+
+
+Access railway.com and deploy postgre
+    Grab the variable and copy the link via DATABASE PUBLIC URL
+
+Apply the following to the settings.py of backend
+
+postgresql://postgres:QYRVdBsaMIZjnMjNtnMhbktVTkMWXxBM@centerbeam.proxy.rlwy.net:23060/railway
+
+
+DATABASES = {
+    'default':
+    {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'railway',
+    'USER':  'postgres',
+    'PASSWORD':  'QYRVdBsaMIZjnMjNtnMhbktVTkMWXxBM',
+    'HOST':  'centerbeam.proxy.rlwy.net',
+    'PORT':  '23060',
+    }
+}
+
+
+Finally execute via python
+
+@venv
+python setting.py makemigrations
+python setting.py migrate
+
+
+
+POSTGRE SQL DATA TYPES
+
+product
+PK = primary key - unique ID
+varchar = product name
+FK = Foreign key
+    Product_id
+cartUser
+
+ERD must have data redundancy
+
+Every data obtained by FK is obtained by PK
